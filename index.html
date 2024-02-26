@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        .time, .position{
+           text-align: center;
+           margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="time">click time</h1>
+    <h1 class="position">click position</h1>
+
+    <script>
+       let time = document.querySelector(".time");
+       let position = document.querySelector(".position");
+       let timeNow = new Date();
+       thishour = timeNow.getHours();
+       thismin = timeNow.getMinutes();
+       thissecond = timeNow.getSeconds();
+       thismilli = timeNow.getMilliseconds();
+       document.onclick = (e) =>{
+       position.textContent = `Position: Y ${e.clientY}, X ${e.clientX}`
+       time.textContent = `Time: ${thishour} Hours  ${thismin} minutes ${thissecond} second ${thismilli} and millisecond`
+       time.style.color = "red";
+       position.style.color = "green";
+    }
+    </script>
+</body>
+</html>
